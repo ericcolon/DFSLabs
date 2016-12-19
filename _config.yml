@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-theme: jekyll-theme-midnight
-=======
 title: DFSLabs
 description: DFSLabs
 google_analytics: 
 show_downloads: true
 theme: jekyll-theme-minimal
 
-gems:
-  - jekyll-mentions
->>>>>>> c3365b5435143227b24ad5a405e01cf4b4f284aa
