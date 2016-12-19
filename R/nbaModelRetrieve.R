@@ -1,7 +1,7 @@
 #' NBA Model Retrieve
 #'
-#' @param modelDate 
-#' @param cookie 
+#' @param modelDate
+#' @param cookie
 #'
 #' @return Fantasylabs NBA model
 #' @export
@@ -24,9 +24,9 @@ getNBAPlayerModel <- function(modelDate = NULL, slate = NULL, exclude = NULL, co
       nbaFDOwn <- data.frame(nbaModelFD$Properties.Player_Name,nbaModelFD$Properties.p_own)
       names(nbaFDOwn)<- list("Name","Projected_Ownership")
       nbaFDOwn <- na.zero(nbaFDOwn)
-      
-      
-      
+
+
+
       LabsFixedNames1 <- sapply(nbaModelDK,as.character)
       LabsFixedNames2 <- sapply(nbaFDOwn,as.character)
       LabsFixedNames2 <- na.zero(LabsFixedNames2)
@@ -47,19 +47,19 @@ getNBAPlayerModel <- function(modelDate = NULL, slate = NULL, exclude = NULL, co
     names(nbaFDOwn)<- list("Name","Projected_Ownership")
     nbaFDOwn <- na.zero(nbaFDOwn)
     excLength <- length(exclude)
-    
+
     laterNbaSlatesDkDf <- nbaModelDK[!(nbaModelDK$TeamName %in% exclude),]
-    
-    
-    
-    
+
+
+
+
     LabsFixedNames1 <- sapply(laterNbaSlatesDkDf,as.character)
     LabsFixedNames2 <- sapply(nbaFDOwn,as.character)
     LabsFixedNames2 <- na.zero(LabsFixedNames2)
     write.csv(LabsFixedNames1, file = paste0("~/Desktop/NBA_Daily/",modelDate,slate,".csv"))
     write.csv(LabsFixedNames2, file = paste0("~/Desktop/NBA_Daily/",modelDate,slate,"_FD.csv"))
-  } 
-    
+  }
+
   return(LabsFixedNames2)
-  
+
 }
