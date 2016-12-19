@@ -3,4 +3,6 @@ description: DFSLabs
 google_analytics: 
 show_downloads: true
 theme: jekyll-theme-midnight
+tarball: https://github.com/benjaminryanclarke/DFSLabs/tarball/
+zip: https://github.com/benjaminryanclarke/DFSLabs/zip
 
