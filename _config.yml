@@ -2,5 +2,7 @@ title: DFSLabs
 description: DFSLabs
 google_analytics: 
 show_downloads: true
-theme: jekyll-theme-minimal
+theme: jekyll-theme-midnight
+tarball: https://github.com/benjaminryanclarke/DFSLabs/tarball/master
+zip: https://github.com/benjaminryanclarke/DFSLabs/zipball/master
 
