@@ -18,9 +18,9 @@ getNBAPlayerModel <- function(modelDate = NULL, slate = NULL, exclude = NULL,swi
         modelURL <- paste0("http://www.fantasylabs.com/api/playermodel/2/",modelDate,"/?modelid=",switch)
     }
    if (is.null(switch)){
-      y <- paste0("NBA",modelDate,".json")
+      y <- paste0("~/Documents/NBA",modelDate,".json")
    } else {
-      y <- paste0("NBA",modelDate,switch,".json")
+      y <- paste0("~/Documents/NBA",modelDate,switch,".json")
    }
       pmCurlHandles <- paste0("-H 'DNT: 1' -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36' -H 'Accept: application/json, text/plain, */*' -H 'Referer: http://www.fantasylabs.com/nba/player-models/' -H 'Cookie: ",cookie,"  -o ",y," -H 'Connection: keep-alive' --compressed")
       curlAddress <- paste0("curl ",modelURL," ",pmCurlHandles)
@@ -52,9 +52,9 @@ getNBAPlayerModel <- function(modelDate = NULL, slate = NULL, exclude = NULL,swi
      modelURL <- paste0("http://www.fantasylabs.com/api/playermodel/2/",modelDate,"/?modelid=",switch)
    }
    if (is.null(switch)){
-    y <- paste0("NBA",modelDate,".json")
+    y <- paste0("~/Documents/NBA",modelDate,".json")
    } else {
-    y <- paste0("NBA",modelDate,switch,".json")
+    y <- paste0("~/Documents/NBA",modelDate,switch,".json")
    }
     pmCurlHandles <- paste0("-H 'DNT: 1' -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language: en-US,en;q=0.8' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.116 Safari/537.36' -H 'Accept: application/json, text/plain, */*' -H 'Referer: http://www.fantasylabs.com/nba/player-models/' -H 'Cookie: ",cookie,"  -o ",y," -H 'Connection: keep-alive' --compressed")
     curlAddress <- paste0("curl ",modelURL," ",pmCurlHandles)
