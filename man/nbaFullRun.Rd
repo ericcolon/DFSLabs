@@ -8,10 +8,6 @@ nbaFullRun(modelDate = "12_1_2016", noStep = nbaFit5_5,
   step = nbaFit5_5Step)
 }
 \arguments{
-\item{modelDate}{}
-
-\item{noStep}{}
-
 \item{step}{}
 }
 \value{

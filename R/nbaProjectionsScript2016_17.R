@@ -1,8 +1,8 @@
 #' NBA Full Run
 #'
-#' @param modelDate 
-#' @param noStep 
-#' @param step 
+#' @param modelDate
+#' @param noStep
+#' @param step
 #'
 #' @return data frame for daily Projections
 #' @export
