@@ -5,7 +5,7 @@ cluster1 <- parallel::makePSOCKcluster(3)
 doParallel::registerDoParallel(cluster1)
 
 #GamesToModel..(Add accordingly as season goes on)
-nba16Oct_Phan <- foreach(i=25:31) %dopar% DFSLabs::getNbaPlayerModels_Other(modelDate = paste0("10_",i,"_2016"),other = "779922", mName = "Phan")
+nba16Oct_Phan <- foreach(i=25:31) %dopar% DFSLabs::getN(modelDate = paste0("10_",i,"_2016"),other = "779922", mName = "Phan")
 nba16Nov1_Phan <- foreach(i=1:23) %dopar% DFSLabs::getNbaPlayerModels_Other(modelDate = paste0("11_",i,"_2016"),other = "779922", mName = "Phan")
 nba16Nov2_Phan <- foreach(i=25:30) %dopar% DFSLabs::getNbaPlayerModels_Other(modelDate = paste0("11_",i,"_2016"),other = "779922", mName = "Phan")
 nba16Dec_Phan <- foreach(i=1:18) %dopar% DFSLabs::getNbaPlayerModels_Other(modelDate = paste0("12_",i,"_2016"),other = "779922", mName = "Phan")

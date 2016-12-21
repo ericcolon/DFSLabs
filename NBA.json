@@ -79,7 +79,7 @@ table tr.alt td,table tr.alt th{}
     <tr><th>Physical Path</th><td>&nbsp;&nbsp;&nbsp;D:\Http\www.fantasylabs.com\api\playermodel\2\</td></tr> 
     <tr class="alt"><th>Logon Method</th><td>&nbsp;&nbsp;&nbsp;Anonymous</td></tr> 
     <tr><th>Logon User</th><td>&nbsp;&nbsp;&nbsp;Anonymous</td></tr> 
-    <tr class="alt"><th>Request Tracing Directory</th><td>&nbsp;&nbsp;&nbsp;C:\inetpub\logs\FailedReqLogFiles</td></tr> 
+     
    </table> 
    <div class="clear"></div> 
   </div> 

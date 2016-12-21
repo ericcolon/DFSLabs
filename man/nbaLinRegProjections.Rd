@@ -2,20 +2,24 @@
 % Please edit documentation in R/nbaLinRegFitProjectionsFunction.R
 \name{nbaLinRegProjections}
 \alias{nbaLinRegProjections}
-\title{NBA linear regression fit model projections function}
+\title{NBA Linear Regression Model Projections Function}
 \usage{
 nbaLinRegProjections(modelDate = "11_15_2016", lmFit = nbaFit5_5,
   lmModel = "nbaFit5_5")
 }
 \arguments{
+\item{modelDate}{}
+
+\item{lmFit}{}
+
 \item{lmModel}{}
 }
 \value{
-nba data frame Daily projections
+nba data frame of daily projections using a linear model to predict values
 }
 \description{
-NBA linear regression fit model projections function
+NBA Linear Regression Model Projections Function
 }
 \examples{
-nbaLinRegFitProjections(modelDate = "11_15_2016")
+nbaLinRegProjections(modelDate="11_15_2016",lmFit=nbaFit5_5,lmModel = "nbaFit5_5")
 }
