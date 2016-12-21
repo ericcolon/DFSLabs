@@ -9,7 +9,7 @@
 #'
 #' @examples nbaFullRun(modelDate = "12_1_2016",noStep = nbaFit5_5,step = nbaFit5_5Step)
 nbaFullRun <- function(modelDate = "12_1_2016",noStep = nbaFit5_5,step = nbaFit5_5Step){
-projectNBA(modelDate)
+projectNBA()
 nbaLinRegProjections(modelDate,lmFit = noStep,lmModel = "noStep")
 nbaLinRegProjections(modelDate,lmFit = step,lmModel = "step")
 noStepCSV <- read.csv(paste0("~/Desktop/NBA_Daily/",modelDate,"noStep","_LinRegFitProjections.csv"),stringsAsFactors = FALSE)
@@ -23,3 +23,4 @@ combinedDf <- combinedDf %>% arrange(combinedDf[,6])
 write.csv(combinedDf,file=paste0("~/Desktop/NBA_Daily/",modelDate,"Averaged","_LinRegFitProjections.csv"))
 return(combinedDf)
 }
+

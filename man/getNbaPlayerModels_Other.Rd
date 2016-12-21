@@ -4,8 +4,8 @@
 \alias{getNbaPlayerModels_Other}
 \title{Get NBA Labs Model for a model otber than 'Finding Value' Model}
 \usage{
-getNbaPlayerModels_Other(modelDate = "12_18_2016", other = "705700",
-  mName = "Russell_and_Flow")
+getNbaPlayerModels_Other(modelDate = "12_18_2016", other = "779922",
+  mName = "Phan")
 }
 \arguments{
 \item{mName}{}
