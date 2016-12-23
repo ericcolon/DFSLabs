@@ -1,17 +1,18 @@
 #' NBA Linear Regression Model Projections Function
 #'
-#' @param modelDate 
-#' @param lmFit 
-#' @param lmModel 
+#' @param modelDate
+#' @param lmFit
+#' @param lmModel
 #'
 #' @return nba data frame of daily projections using a linear model to predict values
 #' @export
 #'
-#' @examples nbaLinRegProjections(modelDate="11_15_2016",lmFit=nbaFit5_5,lmModel = "nbaFit5_5")
-nbaLinRegProjections <- function(modelDate="11_15_2016",lmFit=nbaFit5_5,lmModel = "nbaFit5_5"){
-#load(file ="~/Desktop/NBA_Daily/nbaFit4.rda")
-#load("/Users/Ben/Desktop/nbaFit10noStep.rda")
-#load("/Users/Ben/Desktop/nbaFit10Step.rda")
+#' @examples nbaLinRegProjections(modelDate="11_15_2016",lmFit=lmer10,lmModel = "lmer10")
+nbaLinRegProjections <- function(modelDate="11_15_2016",lmFit=lmer10,lmModel = "lmer10"){
+load(file ="~/Desktop/NBA_Daily/nbaFit4.rda")
+load(file ="~/Desktop/NBA_Daily/nbaFit10noStep.rda")
+load(file ="~/Desktop/NBA_Daily/nbaFit10Step.rda")
+load(file ="~/Desktop/NBA_Daily/nbalmerFit1.rda")
 nba_modelDate <- read.csv(paste0("~/Desktop/NBA_Daily/",modelDate,".csv"),stringsAsFactors = FALSE)
 nba_modelDate <- na.zero(nba_modelDate)
 nba_modelDatePred <- predict(lmFit, nba_modelDate)
