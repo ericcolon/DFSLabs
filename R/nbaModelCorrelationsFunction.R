@@ -21,8 +21,8 @@ model1.cor <- cor(numericOnly(model1.cor))
 model2.cor <- cor(numericOnly(model2.cor))
 fullModel.cor <- cor(numericOnly(fullModel.cor))
 
-modelCorrs <- data.frame(model1.cor[2,6],model2.cor[2,6],fullModel.cor[2,6])
-names(modelCorrs)<-list(m1Name,m2Name,fullModel)
+modelCorrs <- data.frame(model1.cor[2,6],model2.cor[2,6],fullModel.cor[2,6],modelDate)
+names(modelCorrs)<-list(m1Name,m2Name,fullModel,"Date")
 return(modelCorrs)
 
 }

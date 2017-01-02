@@ -17,5 +17,5 @@ NBA projections for desired Date
 NBA Projections
 }
 \examples{
-projectNBA()
+projectNBA(modelDate,slate,exclude,cookie)
 }
