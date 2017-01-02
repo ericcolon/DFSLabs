@@ -1,8 +1,8 @@
 #' NBA Full Run
 #'
-#' @param modelDate
-#' @param noStep
-#' @param step
+#' @param modelDate "1_1_2017" daily games date
+#' @param noStep nbaFit5_5 fit model
+#' @param step lmer10 fit model
 #'
 #' @return data frame for daily Projections
 #' @export

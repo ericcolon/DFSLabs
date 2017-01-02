@@ -1,7 +1,7 @@
 #' OutlierKD Function
 #'
-#' @param dt
-#' @param var
+#' @param dt data
+#' @param var variable
 #'
 #' @return outlier?
 #' @export

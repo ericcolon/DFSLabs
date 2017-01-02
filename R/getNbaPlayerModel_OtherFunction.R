@@ -1,8 +1,8 @@
 #' Get NBA Labs Model for a model otber than 'Finding Value' Model
 #'
-#' @param modelDate
-#' @param other
-#' @param mName
+#' @param modelDate "1_1_2017"
+#' @param other "705700"
+#' @param mName "Russell_and_Flow"
 #'
 #' @return newPlayerModelof Desired choice
 #' @export

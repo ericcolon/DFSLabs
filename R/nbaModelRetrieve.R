@@ -1,7 +1,7 @@
 #' NBA Model Retrieve
 #'
-#' @param modelDate
-#' @param cookie
+#' @param modelDate "1_1_2017"
+#' @param cookie for cURL from FLabs (Chrome Browser)..
 #'
 #' @return Fantasylabs NBA model
 #' @export

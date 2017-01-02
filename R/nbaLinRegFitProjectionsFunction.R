@@ -1,8 +1,8 @@
 #' NBA Linear Regression Model Projections Function
 #'
-#' @param modelDate
-#' @param lmFit
-#' @param lmModel
+#' @param modelDate "12_27_2016"
+#' @param lmFit lmer10
+#' @param lmModel "lmer10"
 #'
 #' @return nba data frame of daily projections using a linear model to predict values
 #' @export

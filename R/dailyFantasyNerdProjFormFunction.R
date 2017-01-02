@@ -1,7 +1,7 @@
 #' Daily FantasyNerd PRojections Format to csv for upload
 #'
-#' @param modelDate
-#' @param projType
+#' @param modelDate "1_1_2017"
+#' @param projType name of Projections to be saved as...csv
 #'
 #' @return df of projections from desired model and day in DFNerd uplaid format
 #' @export

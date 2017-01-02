@@ -8,7 +8,11 @@ getNbaPlayerModels_Other(modelDate = "12_18_2016", other = "779922",
   mName = "Phan")
 }
 \arguments{
-\item{mName}{}
+\item{modelDate}{"1_1_2017"}
+
+\item{other}{"705700"}
+
+\item{mName}{"Russell_and_Flow"}
 }
 \value{
 newPlayerModelof Desired choice

@@ -1,7 +1,7 @@
 #' nhl Model Retrieve
 #'
-#' @param modelDate
-#' @param cookie
+#' @param modelDate "1_1_2017"
+#' @param cookie cookie1 from Flabs Chrome cURL to get...
 #'
 #' @return Fantasylabs nhl model
 #' @export

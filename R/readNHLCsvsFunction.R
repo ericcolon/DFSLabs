@@ -1,7 +1,7 @@
-#' read NHL csv saved Models
+#' Read NHL csv saved Models
 #'
-#' @param modelDate
-#' @param modelPosition
+#' @param modelDate "1_1_2017"
+#' @param modelPosition "ALL","S","G"... Both,Skaters Only,Goalies Only..
 #'
 #' @return pulls model into r
 #' @export

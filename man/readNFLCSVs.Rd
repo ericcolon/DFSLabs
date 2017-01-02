@@ -2,25 +2,25 @@
 % Please edit documentation in R/readNFLCSVsFunction.R
 \name{readNFLCSVs}
 \alias{readNFLCSVs}
-\title{read NFl csv saved Models}
+\title{Read NFl csv saved Models}
 \usage{
-readNFLCSVs(modelYear = "2015", modelWeek = NULL, modelId = "554405",
+readNFLCSVs(modelYear = "2015", modelWeek = NULL, modelId = NULL,
   PositionID = NULL)
 }
 \arguments{
-\item{modelYear}{}
+\item{modelYear}{"2016"}
 
-\item{modelWeek}{}
+\item{modelWeek}{17}
 
-\item{PositionID}{}
+\item{PositionID}{"QB"}
 
-\item{mod}{}
+\item{mod}{NULL}
 }
 \value{
 pulls model into r
 }
 \description{
-read NFl csv saved Models
+Read NFl csv saved Models
 }
 \examples{
 QBM <- readNFLCSVs(modelYear = "2015",modelWeek = NULL ,mod = "", PositionID = NULL)

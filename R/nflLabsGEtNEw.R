@@ -1,10 +1,10 @@
-#'NFL FantasyLabs Model Retrieve
+#' NFL FantasyLabs Model Retrieve
 #'
-#' @param modelYear
-#' @param modelWeek
-#' @param model
-#' @param mod
-#' @param PositionID
+#' @param modelYear "2016"
+#' @param modelWeek 17
+#' @param model NULL
+#' @param mod NULL
+#' @param PositionID "QB"
 #'
 #' @return FantasyLabs NFL model
 #' @export

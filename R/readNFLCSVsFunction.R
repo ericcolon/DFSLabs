@@ -1,9 +1,9 @@
-#' read NFl csv saved Models
+#' Read NFl csv saved Models
 #'
-#' @param modelYear
-#' @param modelWeek
-#' @param mod
-#' @param PositionID
+#' @param modelYear "2016"
+#' @param modelWeek 17
+#' @param mod NULL
+#' @param PositionID "QB"
 #'
 #' @return pulls model into r
 #' @export
