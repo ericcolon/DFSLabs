@@ -7,7 +7,9 @@
 dailyFantasyNerdProjForm(modelDate = "12_1_2016", projType = "Averaged")
 }
 \arguments{
-\item{projType}{}
+\item{modelDate}{"1_1_2017"}
+
+\item{projType}{name of Projections to be saved as...csv}
 }
 \value{
 df of projections from desired model and day in DFNerd uplaid format

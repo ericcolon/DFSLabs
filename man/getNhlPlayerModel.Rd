@@ -8,7 +8,9 @@ getNhlPlayerModel(modelDate = "12_23_2016",
   cookie = "__cfduid=d46b64495b55215841566c89ce01d6fbd1480519747; LD_U=http\%3A\%2F\%2Fwww.fantasylabs.com\%2F; __distillery=bb3e53d_b333f0ea-b6ab-4d8b-bcbb-e8f78b8d5c3f-86a4ffd60-c4a9ff71f0fe-aef4; LD_S=1483050568679; LD_R=; _gat=1; .AspNet.Cookies=y5EwFMncNLomeFSafp9SIE7fCvJBgJX7e7NEzShGZwzkrAV2GpihUEdVaavtghwRaQAexBI_oHlDKO1hi3BXQUbyWlS9F9Vl6nduqcs0aJ2pjEhtahx_Lww_by4_RhWOSIoPc62aqDWdAJ7XXncYhb7PNk8kTE_T44WqWADL5Qc5LB3upqEk20amdTdHK8sWKFgaNs054FSxnwjki6pLxBQ_4IehZ2uo_8XqBaLYQSfWPiDKZZXY93CUIHRuTB6Vk6YqGdvTqX-lqDCu2MjdNwvwcnbRs8xMD3veXuvlUPADlzUv6UY4E1lQ942M0BJRK-n1Vs1rBcB7ItL0fogJ-mMC-ZQc_AYJo_uG3Pa5mWHWnPmmFHlS0goRDs9zUTa4SPiPtmCReo14fgRdS0YdQZWUWd0uy9qwSGEgS3cjK0xx3EB5VdM7U-YfYG7OCOPCEnz6mqVWJPxdji_ckRWZPxWVUuiOy8nhihJbqgzoWNY; flid=9FKN218a_UamhblGysQA7Q; __zlcmid=e6g4jX86CRpGap; _ga=GA1.2.351079370.1480519759; LD_T=d014f701-2492-4486-bcec-b421e46d54b2'")
 }
 \arguments{
-\item{cookie}{}
+\item{modelDate}{"1_1_2017"}
+
+\item{cookie}{cookie1 from Flabs Chrome cURL to get...}
 }
 \value{
 Fantasylabs nhl model

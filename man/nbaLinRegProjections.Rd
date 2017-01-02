@@ -8,7 +8,11 @@ nbaLinRegProjections(modelDate = "11_15_2016", lmFit = lmer10,
   lmModel = "lmer10")
 }
 \arguments{
-\item{lmModel}{}
+\item{modelDate}{"12_27_2016"}
+
+\item{lmFit}{lmer10}
+
+\item{lmModel}{"lmer10"}
 }
 \value{
 nba data frame of daily projections using a linear model to predict values

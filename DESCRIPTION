@@ -1,6 +1,6 @@
 Package: DFSLabs
 Title: Provides Tools For Daily Fantasy Sports
-Version: 1.0.0.000
+Version: 1.0.1.999
 Authors@R: person("Benjamin", "Clarke", email = "benjaminryanclarke@icloud.com", role = c("aut", "cre"))
 Description: Provides tools(functions) to assist in daily fantasy analysis
     focusing primarily on Draftkings contests and data with help from FantasyLabs

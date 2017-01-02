@@ -9,7 +9,11 @@ nbaFullRun(modelDate = "12_1_2016", noStep = nbaFit5_5, step = lmer10,
   fullModelName = "Averaged")
 }
 \arguments{
-\item{step}{}
+\item{modelDate}{"1_1_2017" daily games date}
+
+\item{noStep}{nbaFit5_5 fit model}
+
+\item{step}{lmer10 fit model}
 }
 \value{
 data frame for daily Projections

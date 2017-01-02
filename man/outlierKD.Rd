@@ -7,7 +7,9 @@
 outlierKD(dt, var)
 }
 \arguments{
-\item{var}{}
+\item{dt}{data}
+
+\item{var}{variable}
 }
 \value{
 outlier?
