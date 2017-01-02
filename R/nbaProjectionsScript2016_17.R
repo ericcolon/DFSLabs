@@ -7,9 +7,9 @@
 #' @return data frame for daily Projections
 #' @export
 #'
-#' @examples nbaFullRun(modelDate = "1_1_2017",noStep = nYearLM1AIC,step = nYearGLM1, model1name = "nYearLM1AIC", model2name = "nYearGLM1", fullModelName = "LatestProjFit")
-nbaFullRun <- function(modelDate = "1_1_2017",noStep = nYearLM1AIC,step = nYearGLM1, model1name = "nYearLM1AIC", model2name = "nYearGLM1", fullModelName = "LatestProjFit"){
-#projectNBA(modelDate)
+#' @examples nbaFullRun(modelDate = "1_1_2017",noStep = nYearLM1AIC,step = nYearGLM1, model1name = "nYearLM1AIC", model2name = "nYearGLM2", fullModelName = "LatestProjFit")
+nbaFullRun <- function(modelDate = "1_1_2017",noStep = nYearLM1AIC,step = nYearGLM2, model1name = "nYearLM1AIC", model2name = "nYearGLM2", fullModelName = "LatestProjFit"){
+getNBAPlayerModel(modelDate=modelDate)
 
 nbaLinRegProjections(modelDate,lmFit = noStep,lmModel = model1name)
 nbaLinRegProjections(modelDate,lmFit = step,lmModel = model2name)
