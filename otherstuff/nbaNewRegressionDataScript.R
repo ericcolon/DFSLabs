@@ -1,7 +1,7 @@
 library(MASS)
 
 doParallel::registerDoParallel(cl=cluster1)
-cluster1 <- parallel::makePSOCKcluster(3)
+cluster1 <- parallel::makePSOCKcluster(2)
 doParallel::registerDoParallel(cluster1)
 
 #GamesToModel..(Add accordingly as season goes on)
@@ -11,11 +11,11 @@ nba16Nov2 <- foreach(i=25:30) %dopar% getNBAPlayerModel(modelDate = paste0("11_"
 nba16Dec1 <- foreach(i=1:23) %dopar% getNBAPlayerModel(modelDate = paste0("12_",i,"_2016"))
 nba16Dec2 <- foreach(i=25:30) %dopar% getNBAPlayerModel(modelDate = paste0("12_",i,"_2016"))
 
-nba16Oct <- foreach(i=25:31) %dopar% DFSLabs::readNBACSVs(modelDate=paste0("10_",i,"_2016"))
-nba16Nov1 <- foreach(i=1:23) %dopar% DFSLabs::readNBACSVs(modelDate=paste0("11_",i,"_2016"))
-nba16Nov2 <- foreach(i=25:30) %dopar% DFSLabs::readNBACSVs(modelDate=paste0("11_",i,"_2016"))
-nba16Dec1 <- foreach(i=1:23) %dopar% DFSLabs::readNBACSVs(modelDate=paste0("12_",i,"_2016"))
-nba16Dec2 <- foreach(i=25:30) %dopar% DFSLabs::readNBACSVs(modelDate=paste0("12_",i,"_2016"))
+nba16Oct <- foreach(i=25:31) %do% DFSLabs::readNBACSVs(modelDate=paste0("10_",i,"_2016"))
+nba16Nov1 <- foreach(i=1:23) %do% DFSLabs::readNBACSVs(modelDate=paste0("11_",i,"_2016"))
+nba16Nov2 <- foreach(i=25:30) %do% DFSLabs::readNBACSVs(modelDate=paste0("11_",i,"_2016"))
+nba16Dec1 <- foreach(i=1:23) %do% DFSLabs::readNBACSVs(modelDate=paste0("12_",i,"_2016"))
+nba16Dec2 <- foreach(i=25:30) %do% DFSLabs::readNBACSVs(modelDate=paste0("12_",i,"_2016"))
 
 
 #CombineAllGames to one dataframe

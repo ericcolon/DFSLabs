@@ -9,7 +9,7 @@
 #'
 #' @examples nbaFullRun(modelDate = "12_1_2016",noStep = nbaFit5_5,step = nbaFit5_5Step, model1name = "nbaFit5_5", model2name = "lmer10", fullModelName = "Averaged")
 nbaFullRun <- function(modelDate = "12_1_2016",noStep = nbaFit5_5,step = lmer10, model1name = "nbaFit5_5", model2name = "lmer10", fullModelName = "Averaged"){
-projectNBA(modelDate)
+#projectNBA(modelDate)
 
 nbaLinRegProjections(modelDate,lmFit = noStep,lmModel = model1name)
 nbaLinRegProjections(modelDate,lmFit = step,lmModel = model2name)
