@@ -4,14 +4,10 @@
 \alias{nbaLinRegProjections}
 \title{NBA Linear Regression Model Projections Function}
 \usage{
-nbaLinRegProjections(modelDate = "11_15_2016", lmFit = nbaFit5_5,
-  lmModel = "nbaFit5_5")
+nbaLinRegProjections(modelDate = "11_15_2016", lmFit = lmer10,
+  lmModel = "lmer10")
 }
 \arguments{
-\item{modelDate}{}
-
-\item{lmFit}{}
-
 \item{lmModel}{}
 }
 \value{
@@ -21,5 +17,5 @@ nba data frame of daily projections using a linear model to predict values
 NBA Linear Regression Model Projections Function
 }
 \examples{
-nbaLinRegProjections(modelDate="11_15_2016",lmFit=nbaFit5_5,lmModel = "nbaFit5_5")
+nbaLinRegProjections(modelDate="11_15_2016",lmFit=lmer10,lmModel = "lmer10")
 }

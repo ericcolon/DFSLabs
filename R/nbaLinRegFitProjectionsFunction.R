@@ -9,11 +9,13 @@
 #'
 #' @examples nbaLinRegProjections(modelDate="11_15_2016",lmFit=lmer10,lmModel = "lmer10")
 nbaLinRegProjections <- function(modelDate="11_15_2016",lmFit=lmer10,lmModel = "lmer10"){
-load(file ="~/Desktop/NBA_Daily/nbaFit4.rda")
-load(file ="~/Desktop/NBA_Daily/nbaFit10noStep.rda")
-load(file ="~/Desktop/NBA_Daily/nbaFit10Step.rda")
-load(file ="~/Desktop/NBA_Daily/nbalmerFit1.rda")
-nba_modelDate <- read.csv(paste0("~/Desktop/NBA_Daily/",modelDate,".csv"),stringsAsFactors = FALSE)
+#load(file ="~/Desktop/NBA_Daily/nbaFit4.rda")
+#load(file ="~/Desktop/NBA_Daily/nbaFit10noStep.rda")
+#load(file ="~/Desktop/NBA_Daily/nbaFit10Step.rda")
+#load(file ="~/Desktop/NBA_Daily/nbalmerFit1.rda")
+#load("~/Desktop/NBA_Daily/glmfit4.rda")
+
+#nba_modelDate <- read.csv(paste0("~/Desktop/NBA_Daily/",modelDate,".csv"),stringsAsFactors = FALSE)
 nba_modelDate <- na.zero(nba_modelDate)
 nba_modelDatePred <- predict(lmFit, nba_modelDate)
 nba_modelDateOwnP <- data.frame(FOO=c(nba_modelDate$Properties.p_own))

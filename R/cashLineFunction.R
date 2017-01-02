@@ -6,7 +6,7 @@
 #' @examples getCashLine()
 getCashLine <- function() {
 urlDate <- readline("Enter date as mon(first3letters)-dd-yyyy : ")
-goldGet <- httpGET(paste0("http://www.dfsgold.com/mlb/daily-fantasy-recap-draftkings-",urlDate))
+goldGet <- httpGET(paste0("http://www.dfsgold.com/nba/daily-fantasy-recap-draftkings-",urlDate))
 gold <- readHTMLTable(goldGet , stingsAsFactors = FALSE)
 goldTable <- data.frame(gold$MainContent_GridView3, stringsAsFactors = FALSE)
 

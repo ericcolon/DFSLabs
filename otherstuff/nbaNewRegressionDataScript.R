@@ -5,22 +5,32 @@ cluster1 <- parallel::makePSOCKcluster(3)
 doParallel::registerDoParallel(cluster1)
 
 #GamesToModel..(Add accordingly as season goes on)
-nba16Oct_Phan <- foreach(i=25:31) %dopar% DFSLabs::getN(modelDate = paste0("10_",i,"_2016"),other = "779922", mName = "Phan")
-nba16Nov1_Phan <- foreach(i=1:23) %dopar% DFSLabs::getNbaPlayerModels_Other(modelDate = paste0("11_",i,"_2016"),other = "779922", mName = "Phan")
-nba16Nov2_Phan <- foreach(i=25:30) %dopar% DFSLabs::getNbaPlayerModels_Other(modelDate = paste0("11_",i,"_2016"),other = "779922", mName = "Phan")
-nba16Dec_Phan <- foreach(i=1:18) %dopar% DFSLabs::getNbaPlayerModels_Other(modelDate = paste0("12_",i,"_2016"),other = "779922", mName = "Phan")
+nba16Oct <- foreach(i=25:31) %dopar% getNBAPlayerModel(modelDate = paste0("10_",i,"_2016"))
+nba16Nov1 <- foreach(i=1:23) %dopar% getNBAPlayerModel(modelDate = paste0("11_",i,"_2016"))
+nba16Nov2 <- foreach(i=25:30) %dopar% getNBAPlayerModel(modelDate = paste0("11_",i,"_2016"))
+nba16Dec1 <- foreach(i=1:23) %dopar% getNBAPlayerModel(modelDate = paste0("12_",i,"_2016"))
+nba16Dec2 <- foreach(i=25:30) %dopar% getNBAPlayerModel(modelDate = paste0("12_",i,"_2016"))
+
+nba16Oct <- foreach(i=25:31) %dopar% DFSLabs::readNBACSVs(modelDate=paste0("10_",i,"_2016"))
+nba16Nov1 <- foreach(i=1:23) %dopar% DFSLabs::readNBACSVs(modelDate=paste0("11_",i,"_2016"))
+nba16Nov2 <- foreach(i=25:30) %dopar% DFSLabs::readNBACSVs(modelDate=paste0("11_",i,"_2016"))
+nba16Dec1 <- foreach(i=1:23) %dopar% DFSLabs::readNBACSVs(modelDate=paste0("12_",i,"_2016"))
+nba16Dec2 <- foreach(i=25:30) %dopar% DFSLabs::readNBACSVs(modelDate=paste0("12_",i,"_2016"))
+
+
 #CombineAllGames to one dataframe
-nba16All_Phan <- bind_rows(nba16Oct_Phan,nba16Nov1_Phan,nba16Nov2_Phan,nba16Dec_Phan)
+nba16All_NewYear <- bind_rows(nba16Oct,nba16Nov1,nba16Nov2,nba16Dec1,nba16Dec2)
+nba16All_NewYear <- na.zero(nba16All_NewYear)
 #Remove Identical Variables
-nba16All_PhanX <- nba16All_Phan %>% dplyr::select(-X,-Properties.ActualPoints,-ActualPoints)
+nba16All_X <- nba16All_NewYear %>% dplyr::select(-X,-Properties.ActualPoints,-ActualPoints)
 #GetActual Points into one column
-nba16All_PhanY <- nba16All_Phan$ActualPoints
+nba16All_Y <- nba16All_NewYear$ActualPoints
 #Remove all NAs
-nba16All_PhanX <- na.zero(nba16All_PhanX)
+#nba16All_X <- na.zero(nba16All_X)
 #Get rid of all non numerics in data frame
-nba16All_PhanX <- numericOnly(nba16All_PhanX)
+nba16All_X <- numericOnly(nba16All_X)
 #Basic LM model,AIC Model, stepChoice Model, glm Model
-Phan1 <- lm(nba16All_PhanY~ Salary + Properties.Ceiling + Properties.Floor +
+newYearlm <- lm(nba16All_Y~ Salary + Properties.Ceiling + Properties.Floor +
               Properties.ProjPlusMinus + Properties.UsageProj + Properties.MinutesProj +
               Properties.FantasyPerMinute + Properties.PER + Properties.Usage +
               Properties.Trend + Properties.OppPlusMinus + Properties.PaceD +
@@ -28,26 +38,26 @@ Phan1 <- lm(nba16All_PhanY~ Salary + Properties.Ceiling + Properties.Floor +
               Properties.Touches + Properties.OppPts + Properties.Spread +
               Properties.Total + Properties.Month_Salary_Change + Properties.Season_PPG +
               Properties.Season_X2 + Properties.Season_Count + Properties.ProjPlusMinusPct +
-              Properties.Consistency + Properties.Upside + Properties.Season_PPG_Percentile,data=nba16All_PhanX)
-summary(Phan1)
+              Properties.Consistency + Properties.Upside + Properties.Season_PPG_Percentile,data=nba16All_X)
+summary(newYearlm)
 
-RFAIC1 <- stepAIC(Phan1,direction = "both")
+RFAIC1 <- stepAIC(newYearlm,direction = "both")
 summary(RFAIC1)
-stepPhan1 <- step(Phan1,direction = "forward")
-summary(stepPhan1)
-glmPhan1 <- glm(nba16All_PhanY~.,data = nba16All_PhanX)
-summary(glmPhan1)
-glmPhan1rsqr <- 1-glmPhan1$deviance/glmPhan1$null.deviance
-glmPhan1rsqr
+step1 <- step(newYearlm,direction = "forward")
+summary(step1)
+glm1 <- glm(nba16All_Y~.,data = nba16All_X)
+summary(glm1)
+glm1rsqr <- 1-glm1$deviance/glm1$null.deviance
+glm1rsqr
 
 #basic plots
-plot(Phan1)
+plot(newYearlm)
 plot(RFAIC1)
-plot(stepPhan1)
-plot(glmPhan1)
+plot(step1)
+plot(glm1)
 
-saveRDS(Phan1,file = paste0("~/Documents/Phan.5885.rds"))
-saveRDS(PhanAIC1,file = paste0("~/Documents/Phan.5878.rds"))
-saveRDS(stepPhan1,file = paste0("~/Documents/Phan.5878.5861.rds"))
-saveRDS(glmPhan1,file = paste0("~/Documents/Phan.5890409.rds"))
+saveRDS(newYearlm,file = paste0("~/Documents/.5885.rds"))
+saveRDS(AIC1,file = paste0("~/Documents/.5878.rds"))
+saveRDS(step1,file = paste0("~/Documents/.5878.5861.rds"))
+saveRDS(glm1,file = paste0("~/Documents/.5890409.rds"))
 

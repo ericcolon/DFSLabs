@@ -1,7 +1,7 @@
 #' NBA Model Retrieve
 #'
-#' @param modelDate 
-#' @param cookie 
+#' @param modelDate
+#' @param cookie
 #'
 #' @return Fantasylabs NBA model
 #' @export
@@ -10,7 +10,7 @@
 #'
 
 
-getNBAPlayerModel <- function(modelDate = NULL, slate = NULL, exclude = NULL, cookie = "__cfduid=d46b64495b55215841566c89ce01d6fbd1480519747; LD_U=http%3A%2F%2Fwww.fantasylabs.com%2F; __distillery=bb3e53d_b333f0ea-b6ab-4d8b-bcbb-e8f78b8d5c3f-86a4ffd60-c4a9ff71f0fe-aef4; _gat=1; LD_S=1481767246798; LD_R=; .AspNet.Cookies=EVGJH0IuWLy8RuLAWqA3JVB3L8lvyXCaqIDX7mPnHvFo-X76ra1UZRbqo5URKoMo2lrt_BKDiQXclEtWa_hgP7lB6nJsVKo-4dCzLhGJnKZUhq7vWHYc0dHsl2_3m8Wjy-PgYHci5gghAw5y8Lp-rKbi1hRYrHaLQH1_d58PZIZ5q9spxBoCCbZ2ooD-HG0xYfHcPot8_DNrfbeW0XMnByaFVebeNnfem-Mb11nh-wHR3De5peqOHz0-BaRMpG3CnjW8N_pa3OO6BgVMdQ-kr16OSk82gNYDIAAMAvWaqfghUMUjoouY8bJPvqMLcEYX7E2-4K0VWR6usBYAWeZhYOPWPmK9oKhn38Y7RnTawoCNOnqhh6mQyCblU5YwhP7U2xztRCzaNk1N0hvKMvHfQbS35ExGTqeVin7bQIMynh2nYqkjFxhjIT9USeCxQj1zu0UFVZ937dHIARI47-A_QBmier5CJ0Q29n4Isdcu8Bw; flid=-t582kVLjUizx14ZPB2BXQ; __zlcmid=e6g4jX86CRpGap; _ga=GA1.2.351079370.1480519759; LD_T=d014f701-2492-4486-bcec-b421e46d54b2'"){
+getNBAPlayerModel <- function(modelDate = NULL, slate = NULL, exclude = NULL, cookie = "__cfduid=d46b64495b55215841566c89ce01d6fbd1480519747; LD_U=http%3A%2F%2Fwww.fantasylabs.com%2F; __distillery=bb3e53d_b333f0ea-b6ab-4d8b-bcbb-e8f78b8d5c3f-86a4ffd60-c4a9ff71f0fe-aef4; LD_S=1483050568679; LD_R=; _gat=1; .AspNet.Cookies=y5EwFMncNLomeFSafp9SIE7fCvJBgJX7e7NEzShGZwzkrAV2GpihUEdVaavtghwRaQAexBI_oHlDKO1hi3BXQUbyWlS9F9Vl6nduqcs0aJ2pjEhtahx_Lww_by4_RhWOSIoPc62aqDWdAJ7XXncYhb7PNk8kTE_T44WqWADL5Qc5LB3upqEk20amdTdHK8sWKFgaNs054FSxnwjki6pLxBQ_4IehZ2uo_8XqBaLYQSfWPiDKZZXY93CUIHRuTB6Vk6YqGdvTqX-lqDCu2MjdNwvwcnbRs8xMD3veXuvlUPADlzUv6UY4E1lQ942M0BJRK-n1Vs1rBcB7ItL0fogJ-mMC-ZQc_AYJo_uG3Pa5mWHWnPmmFHlS0goRDs9zUTa4SPiPtmCReo14fgRdS0YdQZWUWd0uy9qwSGEgS3cjK0xx3EB5VdM7U-YfYG7OCOPCEnz6mqVWJPxdji_ckRWZPxWVUuiOy8nhihJbqgzoWNY; flid=9FKN218a_UamhblGysQA7Q; __zlcmid=e6g4jX86CRpGap; _ga=GA1.2.351079370.1480519759; LD_T=d014f701-2492-4486-bcec-b421e46d54b2'"){
  if (is.null(exclude)) {
       modelURL <- paste0("http://www.fantasylabs.com/api/playermodel/2/",modelDate,"/?modelid=709033")
       y <- paste0("NBA",modelDate,".json")
@@ -22,11 +22,11 @@ getNBAPlayerModel <- function(modelDate = NULL, slate = NULL, exclude = NULL, co
       #nbaModel <- nbaModelDK[nbaModelDK$Position == id,]
       nbaModelFD <- nbaModelAll$PlayerModels[nbaModelAll$PlayerModels$Properties.SourceId == 4,]
       nbaFDOwn <- data.frame(nbaModelFD$Properties.Player_Name,nbaModelFD$Properties.p_own)
-      names(nbaFDOwn)<- list("Name","Projected_Ownership")
+      names(nbaFDOwn)<- c("Name","Projected_Ownership")
       nbaFDOwn <- na.zero(nbaFDOwn)
-      
-      
-      
+
+
+
       LabsFixedNames1 <- sapply(nbaModelDK,as.character)
       LabsFixedNames2 <- sapply(nbaFDOwn,as.character)
       LabsFixedNames2 <- na.zero(LabsFixedNames2)
@@ -47,19 +47,19 @@ getNBAPlayerModel <- function(modelDate = NULL, slate = NULL, exclude = NULL, co
     names(nbaFDOwn)<- list("Name","Projected_Ownership")
     nbaFDOwn <- na.zero(nbaFDOwn)
     excLength <- length(exclude)
-    
+
     laterNbaSlatesDkDf <- nbaModelDK[!(nbaModelDK$TeamName %in% exclude),]
-    
-    
-    
-    
+
+
+
+
     LabsFixedNames1 <- sapply(laterNbaSlatesDkDf,as.character)
     LabsFixedNames2 <- sapply(nbaFDOwn,as.character)
     LabsFixedNames2 <- na.zero(LabsFixedNames2)
     write.csv(LabsFixedNames1, file = paste0("~/Desktop/NBA_Daily/",modelDate,slate,".csv"))
     write.csv(LabsFixedNames2, file = paste0("~/Desktop/NBA_Daily/",modelDate,slate,"_FD.csv"))
-  } 
-    
+  }
+
   return(LabsFixedNames2)
-  
+
 }

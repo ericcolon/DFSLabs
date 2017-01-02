@@ -1,6 +1,6 @@
 #' NA to Zero
 #'
-#' @param x 
+#' @param x
 #'
 #' @return no NA Dataframe x
 #' @export
