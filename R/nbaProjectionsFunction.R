@@ -26,7 +26,7 @@ projectNBA <- function(modelDate = NULL, slate = NULL, exclude = NULL, cookie = 
     names(finalDf)<- list("Score","Salary","Name","Projection","ProjCostPerPt","ActualPoints","ActualCostPerPt","Position(s)")
     finalDf <- full_join(finalDf,readCSVFd, by = "Name")
     finalDf <- finalDf %>% select(-X) %>% arrange(desc(Projection))
-    finalDf <- separate(data = finalDf, col = Projected_Ownership, into = c("minOWN", "maxOWN"))
+    finalDf <- tidyr::separate(data = finalDf, col = Projected_Ownership, into = c("minOWN", "maxOWN"))
     finalDf <- na.zero(finalDf)
     finalDfChar <- sapply(finalDf,as.character)
 
@@ -62,7 +62,7 @@ projectNBA <- function(modelDate = NULL, slate = NULL, exclude = NULL, cookie = 
     names(finalDf)<- list("Score","Salary","Name","Projection","ProjCostPerPt","ActualPoints","ActualCostPerPt","Position(s)")
     finalDf <- left_join(finalDf,readCSVFd, by = "Name")
     finalDf <- finalDf %>% select(-X) %>% arrange(desc(Projection))
-    finalDf <- separate(data = finalDf, col = Projected_Ownership, into = c("minOWN", "maxOWN"))
+    finalDf <- tidyr::separate(data = finalDf, col = Projected_Ownership, into = c("minOWN", "maxOWN"))
     finalDf <- na.zero(finalDf)
     finalDfChar <- sapply(finalDf,as.character)
 

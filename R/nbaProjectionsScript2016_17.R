@@ -8,9 +8,9 @@
 #' @export
 #'
 #' @examples nbaFullRun(modelDate = "1_1_2017",noStep = nYearLM1AIC,step = nYearGLM1, model1name = "nYearLM1AIC", model2name = "nYearGLM2", fullModelName = "LatestProjFit")
-nbaFullRun <- function(modelDate = "1_1_2017",noStep = nYearLM1AIC,step = nYearGLM2, model1name = "nYearLM1AIC", model2name = "nYearGLM2", fullModelName = "LatestProjFit"){
+nbaFullRun <-   function(modelDate = "1_1_2017",noStep = nba16_17AllStep,step = nYearGLM2, model1name = "nba16_17AllStep", model2name = "nYearGLM2", fullModelName = "FULL"){
 getNBAPlayerModel(modelDate=modelDate)
-
+options(warn=-1)
 nbaLinRegProjections(modelDate,lmFit = noStep,lmModel = model1name)
 nbaLinRegProjections(modelDate,lmFit = step,lmModel = model2name)
 noStepCSV <- read.csv(paste0("~/Desktop/NBA_Daily/",modelDate,model1name,"_LinRegFitProjections.csv"),stringsAsFactors = FALSE)
@@ -18,10 +18,11 @@ stepCSV <- read.csv(paste0("~/Desktop/NBA_Daily/",modelDate,model2name,"_LinRegF
 noStepCSV <- noStepCSV %>% arrange(Name)
 stepCSV <- stepCSV %>% arrange(Name)
 averaged <- ((noStepCSV$Projection + stepCSV$Projection)/2)
-combinedDf <- data.frame(noStepCSV$Team,noStepCSV$Name,averaged,noStepCSV$Position,noStepCSV$Salary,noStepCSV$Salary/averaged,noStepCSV$Ownership,noStepCSV$ActualPoints,noStepCSV$Salary/noStepCSV$ActualPoints)
-names(combinedDf) <- c("Team","Name","Projection","Position","Salary","$/Pt.","Ownership","ActualPoints","Actual$/Pt.")
+combinedDf <- data.frame(noStepCSV$Team,noStepCSV$Name,averaged,noStepCSV$Position,noStepCSV$Salary,noStepCSV$Salary/averaged,noStepCSV$Ownership,noStepCSV$ActualPoints,noStepCSV$Salary/noStepCSV$ActualPoints,noStepCSV$OppPlusMinus)
+names(combinedDf) <- c("Team","Name","Projection","Position","Salary","$/Pt.","Ownership","ActualPoints","Actual$/Pt.","Opp.+/-")
 combinedDf <- combinedDf %>% arrange(combinedDf[,6])
 write.csv(combinedDf,file=paste0("~/Desktop/NBA_Daily/",modelDate,fullModelName,"_LinRegFitProjections.csv"))
 return(combinedDf)
+options(warn=0)
 }
 

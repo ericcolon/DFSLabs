@@ -4,8 +4,8 @@
 \alias{nbaFullRun}
 \title{NBA Full Run}
 \usage{
-nbaFullRun(modelDate = "1_1_2017", noStep = nYearLM1AIC, step = nYearGLM1,
-  model1name = "nYearLM1AIC", model2name = "nYearGLM1",
+nbaFullRun(modelDate = "1_1_2017", noStep = nYearLM1AIC, step = nYearGLM2,
+  model1name = "nYearLM1AIC", model2name = "nYearGLM2",
   fullModelName = "LatestProjFit")
 }
 \arguments{
@@ -22,5 +22,5 @@ data frame for daily Projections
 NBA Full Run
 }
 \examples{
-nbaFullRun(modelDate = "1_1_2017",noStep = nYearLM1AIC,step = nYearGLM1, model1name = "nYearLM1AIC", model2name = "nYearGLM1", fullModelName = "LatestProjFit")
+nbaFullRun(modelDate = "1_1_2017",noStep = nYearLM1AIC,step = nYearGLM1, model1name = "nYearLM1AIC", model2name = "nYearGLM2", fullModelName = "LatestProjFit")
 }
