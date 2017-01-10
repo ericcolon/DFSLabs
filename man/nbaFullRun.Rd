@@ -4,9 +4,9 @@
 \alias{nbaFullRun}
 \title{NBA Full Run}
 \usage{
-nbaFullRun(modelDate = "1_1_2017", noStep = nYearLM1AIC, step = nYearGLM2,
-  model1name = "nYearLM1AIC", model2name = "nYearGLM2",
-  fullModelName = "LatestProjFit")
+nbaFullRun(modelDate = "1_1_2017", noStep = nba16_17AllStep,
+  step = nYearGLM2, model1name = "nba16_17AllStep",
+  model2name = "nYearGLM2", fullModelName = "FULL")
 }
 \arguments{
 \item{modelDate}{"1_1_2017" daily games date}
