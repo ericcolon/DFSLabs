@@ -4,17 +4,19 @@
 \alias{readNFLCSVs}
 \title{Read NFl csv saved Models}
 \usage{
-readNFLCSVs(modelYear = "2015", modelWeek = NULL, modelId = NULL,
-  PositionID = NULL)
+readNFLCSVs(modelYear = "2015", modelSite = "Draftkings",
+  modelWeek = NULL, modelId = NULL, PositionID = NULL)
 }
 \arguments{
 \item{modelYear}{"2016"}
 
+\item{modelSite}{Draftkings or Fanduel}
+
 \item{modelWeek}{17}
 
-\item{PositionID}{"QB"}
+\item{modelId}{FantasyLabs modelID(Part of name of saved csv file to retrieve)}
 
-\item{mod}{NULL}
+\item{PositionID}{"QB"}
 }
 \value{
 pulls model into r
@@ -23,5 +25,5 @@ pulls model into r
 Read NFl csv saved Models
 }
 \examples{
-QBM <- readNFLCSVs(modelYear = "2015",modelWeek = NULL ,mod = "", PositionID = NULL)
+QBM <- readNFLCSVs(modelYear = "2015",modelSite="Draftkings",modelWeek = NULL ,mod = "", PositionID = NULL)
 }

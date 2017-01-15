@@ -4,11 +4,13 @@
 \alias{nbaLinRegProjections}
 \title{NBA Linear Regression Model Projections Function}
 \usage{
-nbaLinRegProjections(modelDate = "11_15_2016", lmFit = lmer10,
-  lmModel = "lmer10")
+nbaLinRegProjections(modelDate = "11_15_2016", modelSite = "Draftkings",
+  lmFit = lmer10, lmModel = "lmer10")
 }
 \arguments{
 \item{modelDate}{"12_27_2016"}
+
+\item{modelSite}{Draftkings or Fanduel}
 
 \item{lmFit}{lmer10}
 
@@ -21,5 +23,5 @@ nba data frame of daily projections using a linear model to predict values
 NBA Linear Regression Model Projections Function
 }
 \examples{
-nbaLinRegProjections(modelDate="11_15_2016",lmFit=lmer10,lmModel = "lmer10")
+nbaLinRegProjections(modelDate="11_15_2016",modelSite="Draftkings",lmFit=lmer10,lmModel = "lmer10")
 }

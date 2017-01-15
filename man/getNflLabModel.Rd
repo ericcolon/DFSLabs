@@ -4,12 +4,14 @@
 \alias{getNflLabModel}
 \title{NFL FantasyLabs Model Retrieve}
 \usage{
-getNflLabModel(modelYear = "2015", modelWeek = NULL, model = NULL,
-  mod = "", PositionID = NULL,
-  cookie = "__cfduid=d46b64495b55215841566c89ce01d6fbd1480519747; LD_U=http\%3A\%2F\%2Fwww.fantasylabs.com\%2F; __distillery=bb3e53d_b333f0ea-b6ab-4d8b-bcbb-e8f78b8d5c3f-86a4ffd60-c4a9ff71f0fe-aef4; LD_S=1483050568679; LD_R=; _gat=1; .AspNet.Cookies=y5EwFMncNLomeFSafp9SIE7fCvJBgJX7e7NEzShGZwzkrAV2GpihUEdVaavtghwRaQAexBI_oHlDKO1hi3BXQUbyWlS9F9Vl6nduqcs0aJ2pjEhtahx_Lww_by4_RhWOSIoPc62aqDWdAJ7XXncYhb7PNk8kTE_T44WqWADL5Qc5LB3upqEk20amdTdHK8sWKFgaNs054FSxnwjki6pLxBQ_4IehZ2uo_8XqBaLYQSfWPiDKZZXY93CUIHRuTB6Vk6YqGdvTqX-lqDCu2MjdNwvwcnbRs8xMD3veXuvlUPADlzUv6UY4E1lQ942M0BJRK-n1Vs1rBcB7ItL0fogJ-mMC-ZQc_AYJo_uG3Pa5mWHWnPmmFHlS0goRDs9zUTa4SPiPtmCReo14fgRdS0YdQZWUWd0uy9qwSGEgS3cjK0xx3EB5VdM7U-YfYG7OCOPCEnz6mqVWJPxdji_ckRWZPxWVUuiOy8nhihJbqgzoWNY; flid=9FKN218a_UamhblGysQA7Q; __zlcmid=e6g4jX86CRpGap; _ga=GA1.2.351079370.1480519759; LD_T=d014f701-2492-4486-bcec-b421e46d54b2'")
+getNflLabModel(modelYear = "2015", modelSite = "Draftkings",
+  modelWeek = NULL, model = NULL, mod = "", PositionID = NULL,
+  cookie = "__cfduid=d8a77c25dbef815632fdbf4f45e81df8b1483248089; LD_U=http\%3A\%2F\%2Fwww.fantasylabs.com\%2F; flid=HQAMnfjSB0ytEUbUy1F_3w; __distillery=13f6068_5d3aa9eb-3e25-403f-be81-5a58b0d371e7-0ef1805cc-ee4b27f5fbc2-cf6a; LD_S=1484395001153; LD_R=; _gat=1; __zlcmid=eNg7LAWTPEIN0T; .AspNet.Cookies=HvlkmjkB2hOLIjpz6d0F83ga6mSltxFn8SlRcPAeSTYlVEK-KGeBLODL74KcuXggUxjSHMhaVKsj105PJl94rsAvzs6SiqsqB3GevubDHupyP26duElDEXAVnqdfW9hUGPmtq7JTr0gMncjlN-vvbQgmSnVT1pg_WxhtojndN5qmtBYK1ZGWOHsvqCapHd7AgFYGwdOfzez01eKVyAtLG0IUXSZnjfXUviFn1U2XeW1VypD_42uykPSBpVyBJ3h1cwSUiGVfCn22BYxejNKo-v--nqwob_7fj2LXNaK3FMBg0qBerQ911pp25SyrhshdxElQf3b4b83Q8SquwW-uuxWhyLj-HL7zk7DblWtK9L-QYk7DEe7w3UoDtrkAG9TiKEbEnBJxv-aI2jmIC9xghrIaBHsDXvq_tnrASbMb4cF0nUmrgZQV3ZEncc0qpHx4FMW-alc8izQJxWQuNy4tNc5hvYgON6oQeOkrSigFjTY; _ga=GA1.2.2034235139.1483248092; LD_T=3afe007d-48de-4954-9c64-a6dd5f392768'")
 }
 \arguments{
 \item{modelYear}{"2016"}
+
+\item{modelSite}{Draftkings or FanDuel}
 
 \item{modelWeek}{17}
 
@@ -18,6 +20,8 @@ getNflLabModel(modelYear = "2015", modelWeek = NULL, model = NULL,
 \item{mod}{NULL}
 
 \item{PositionID}{"QB"}
+
+\item{cookie}{FantasyLabs browser session cookie to enable access to models}
 }
 \value{
 FantasyLabs NFL model
@@ -26,5 +30,5 @@ FantasyLabs NFL model
 NFL FantasyLabs Model Retrieve
 }
 \examples{
-getNflLabModel(modelYear = "2015",modelWeek = NULL,model = NULL,mod = "", PositionID = NULL)
+getNflLabModel(modelYear = "2015",modelSite="Draftkings",modelWeek = NULL,model = NULL,mod = "", PositionID = NULL)
 }

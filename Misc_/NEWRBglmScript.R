@@ -1,12 +1,14 @@
-foreach(i=1:16) %dopar% getNflLabModel("2016",i,PositionID="RB")
-readRB16 <- foreach(i=1:14) %dopar% readNFLCSVs("2016",i,PositionID = "RB")
-RB <- bind_rows(readRB16)
-week <- 17
+foreach(i=8:17) %dopar% getNflLabModel("2015",i,PositionID="RB")
+readRB16 <- foreach(i=1:17) %dopar% readNFLCSVs("2016",i,PositionID = "RB")
+readRB15 <- foreach(i=1:17) %dopar% readNFLCSVs("2015",i,PositionID = "RB")
+RB <- bind_rows(readRB15,readRB16)
+#RB <- bind_rows(readRB16)
+week <- 19
 RBModel <- getNflLabModel("2016",week,PositionID = "RB")
 RBModel <- na.zero(readNFLCSVs("2016",week,PositionID = "RB"))
 nfl_RBOwnP <- data.frame(c(RBModel$Properties.OwnRank))
 
-RBX <- RB %>% select(-X,-Properties.ActualPoints,-Properties.Player_Name,-ActualPoints,-FirstPosition,-Position,-Positions,-Properties.InjuryStatus,-Properties.Position)
+RBX <- RB %>% select(-Properties.Watch,-ExposureProbability,-IsExposureLocked,-Properties.Wind_Direction,-X,-Properties.ActualPoints,-Properties.Player_Name,-ActualPoints,-FirstPosition,-Position,-Positions,-Properties.InjuryStatus,-Properties.Position,-Properties.p_own)
 RBY <- RB$ActualPoints
 RBX <- na.zero(RBX)
 RBglm <- glm(RBY~.,data=RBX)

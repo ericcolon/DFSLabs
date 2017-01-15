@@ -1,10 +1,12 @@
-AllDST16<- foreach(i=1:15) %dopar% getNflLabModel("2016",i,PositionID = "DST")
-readDST16 <- foreach(i=1:14) %dopar% readNFLCSVs("2016",i,PositionID = "DST")
-DST <- bind_rows(readDST16)
-week <- 17
+AllDST16<- foreach(i=8:17) %dopar% getNflLabModel("2015",i,PositionID = "DST")
+readDST16 <- foreach(i=1:17) %dopar% readNFLCSVs("2016",i,PositionID = "DST")
+readDST15 <- foreach(i=1:17) %dopar% readNFLCSVs("2015",i,PositionID = "DST")
+DST <- bind_rows(readDST15,readDST16)
+#DST <- bind_rows(readDST16)
+week <- 19
 DSTModel <- getNflLabModel("2016",week,PositionID = "DST")
 DSTModel <- na.zero(readNFLCSVs("2016",week,PositionID = "DST"))
-DSTX <- DST %>% select(-X,-Properties.ActualPoints,-ActualPoints,-FirstPosition,-Position,-Positions,-Properties.InjuryStatus,-Properties.Position)
+DSTX <- DST %>% select(-Properties.Watch,-ExposureProbability,-IsExposureLocked,-Properties.Wind_Direction,-X,-Properties.ActualPoints,-ActualPoints,-FirstPosition,-Position,-Positions,-Properties.InjuryStatus,-Properties.Position)
 DSTY <- DST$ActualPoints
 DSTX <- na.zero(DSTX)
 DSTglm <- glm(DSTY~.,data=DSTX)

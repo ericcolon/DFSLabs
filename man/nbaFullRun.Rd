@@ -4,16 +4,25 @@
 \alias{nbaFullRun}
 \title{NBA Full Run}
 \usage{
-nbaFullRun(modelDate = "1_1_2017", noStep = nba16_17AllStep,
-  step = nYearGLM2, model1name = "nba16_17AllStep",
-  model2name = "nYearGLM2", fullModelName = "FULL")
+nbaFullRun(modelDate = "1_1_2017", modelSite = "Draftkings",
+  noStep = nba16_17AllStep, step = nYearGLM2,
+  model1name = "nba16_17AllStep", model2name = "nYearGLM2",
+  fullModelName = "FULL")
 }
 \arguments{
 \item{modelDate}{"1_1_2017" daily games date}
 
+\item{modelSite}{Draftkings or FanDuel}
+
 \item{noStep}{nbaFit5_5 fit model}
 
 \item{step}{lmer10 fit model}
+
+\item{model1name}{name of first Regression fitting model}
+
+\item{model2name}{name of second Regression fitting model}
+
+\item{fullModelName}{name of combined Regression fitting models}
 }
 \value{
 data frame for daily Projections
@@ -22,5 +31,5 @@ data frame for daily Projections
 NBA Full Run
 }
 \examples{
-nbaFullRun(modelDate = "1_1_2017",noStep = nYearLM1AIC,step = nYearGLM1, model1name = "nYearLM1AIC", model2name = "nYearGLM2", fullModelName = "LatestProjFit")
+nbaFullRun(modelDate = "1_1_2017",modelSite="Draftkings",noStep = nYearLM1AIC,step = nYearGLM1, model1name = "nYearLM1AIC", model2name = "nYearGLM2", fullModelName = "LatestProjFit")
 }
