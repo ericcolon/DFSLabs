@@ -11,7 +11,7 @@
 #' @export
 #'
 #' @examples nba1_1_2017models.Corr <- nbaCorrelations(modelDate="1_1_2017",model1=nYearLM1AIC,model2=nYearGLM1,m1Name="nYearLM1AIC",m2Name="nYearGLM1",fullModel="nYearLM1AIC_and_nYearGLM1")
-nbaCorrelations<- function(modelDate="1_1_2017",model1=nYearLM1AIC,model2=nYearGLM1,m1Name="nYearLM1AIC",m2Name="nYearGLM1",fullModel="nYearLM1AIC_and_nYearGLM1"){
+nbaCorrelations<- function(modelDate="2_12_2017",model1=nYearLM1AIC,model2=nYearGLM1,m1Name="nYearLM1AIC",m2Name="nYearGLM1",fullModel="nYearLM1AIC_and_nYearGLM1"){
 nbaFullRun(modelDate=modelDate, noStep=model1, step=model2, model1name=m1Name, model2name=m2Name, fullModelName=fullModel)
 model1.cor <- read.csv(file=paste0("~/Desktop/NBA_Daily/",modelDate,m1Name,"_LinRegFitProjections.csv"))
 model2.cor <- read.csv(file=paste0("~/Desktop/NBA_Daily/",modelDate,m2Name,"_LinRegFitProjections.csv"))

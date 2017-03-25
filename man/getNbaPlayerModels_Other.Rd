@@ -23,3 +23,4 @@ Get NBA Labs Model for a model otber than 'Finding Value' Model
 \examples{
 getNbaPlayerModels_Other(modelDate="12_18_2016",other = "705700",mName = "Russell_and_Flow")
 }
+

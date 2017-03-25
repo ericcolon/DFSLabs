@@ -5,9 +5,9 @@
 \title{NBA Full Run}
 \usage{
 nbaFullRun(modelDate = "1_1_2017", modelSite = "Draftkings",
-  noStep = nba16_17AllStep, step = nYearGLM2,
-  model1name = "nba16_17AllStep", model2name = "nYearGLM2",
-  fullModelName = "FULL")
+  noStep = nbaFit5_5, step = nbaLM12, model1name = "nbaFit5_5",
+  model2name = "nbaLM12", fullModelName = "LabsCombined",
+  cookie = labsCookies)
 }
 \arguments{
 \item{modelDate}{"1_1_2017" daily games date}
@@ -23,6 +23,8 @@ nbaFullRun(modelDate = "1_1_2017", modelSite = "Draftkings",
 \item{model2name}{name of second Regression fitting model}
 
 \item{fullModelName}{name of combined Regression fitting models}
+
+\item{cookie}{labs cookies to access labs data}
 }
 \value{
 data frame for daily Projections
@@ -33,3 +35,4 @@ NBA Full Run
 \examples{
 nbaFullRun(modelDate = "1_1_2017",modelSite="Draftkings",noStep = nYearLM1AIC,step = nYearGLM1, model1name = "nYearLM1AIC", model2name = "nYearGLM2", fullModelName = "LatestProjFit")
 }
+

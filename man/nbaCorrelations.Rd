@@ -4,7 +4,7 @@
 \alias{nbaCorrelations}
 \title{NBA model Correlations Comparison Function}
 \usage{
-nbaCorrelations(modelDate = "1_1_2017", model1 = nYearLM1AIC,
+nbaCorrelations(modelDate = "2_12_2017", model1 = nYearLM1AIC,
   model2 = nYearGLM1, m1Name = "nYearLM1AIC", m2Name = "nYearGLM1",
   fullModel = "nYearLM1AIC_and_nYearGLM1")
 }
@@ -30,3 +30,4 @@ NBA model Correlations Comparison Function
 \examples{
 nba1_1_2017models.Corr <- nbaCorrelations(modelDate="1_1_2017",model1=nYearLM1AIC,model2=nYearGLM1,m1Name="nYearLM1AIC",m2Name="nYearGLM1",fullModel="nYearLM1AIC_and_nYearGLM1")
 }
+

@@ -9,7 +9,7 @@
 #' @export
 #'
 #' @examples nbaLinRegProjections(modelDate="11_15_2016",modelSite="Draftkings",lmFit=lmer10,lmModel = "lmer10")
-nbaLinRegProjections <- function(modelDate="11_15_2016",modelSite="Draftkings",lmFit=lmer10,lmModel = "lmer10"){
+nbaLinRegProjections <- function(modelDate="2_12_2017",modelSite="Draftkings",lmFit=lmer10,lmModel = "lmer10",errorHandleProp=NULL,errorHandleValue=NULL){
 if(modelSite=="Draftkings"){
 #load(file ="~/Desktop/NBA_Daily/nbaFit4.rda")
 #load(file ="~/Desktop/NBA_Daily/nbaFit10noStep.rda")
@@ -18,10 +18,14 @@ if(modelSite=="Draftkings"){
 #load("~/Desktop/NBA_Daily/glmfit4.rda")
 #nba_modelDateFD <- read.csv(paste0("~/Desktop/NBA_Daily/",modelDate,"_FD.csv"),stringsAsFactors=FALSE)
 #nba_modelDateFD <- nba_modelDateFD %>% arrange(Name)
-nba_modelDate <- read.csv(paste0("~/Desktop/NBA_Daily/",modelDate,".csv"),stringsAsFactors=FALSE)
+nba_modelDate <- read.csv(paste0("~/Desktop/NBA_Daily/",modelDate,".csv"))
+nba_modelDate <- na.zero(nba_modelDate)
 #nba_modelDateOwnP <- data.frame(FOO=c(nba_modelDate$Projected_Ownership))
 #nba_modelDateOwnP <- separate(data = nba_modelDateOwnP,col = FOO, into = c("minOwn","maxOwn"),sep = "-")
-
+if(!is.null(errorHandleProp)){
+  rowError <- which(nba_modelDate$errorHandleProp == errorHandleValue)
+  nba_modelDate <- nba_modelDate[-rowError[1],]
+  }
 #IF error with type in nbaFullRun add new line below similar to line 24....
 nba_modelDate$Properties.p_own <- as.character(nba_modelDate$Properties.p_own)
 nba_modelDate$Properties.B2B <- as.character(nba_modelDate$Properties.B2B)
@@ -51,7 +55,9 @@ if(modelSite=="FanDuel"){
     #load("~/Desktop/NBA_Daily/glmfit4.rda")
     #nba_modelDateFD <- read.csv(paste0("~/Desktop/NBA_Daily/",modelDate,"_FD.csv"),stringsAsFactors=FALSE)
     #nba_modelDateFD <- nba_modelDateFD %>% arrange(Name)
-    nba_modelDate <- read.csv(paste0("~/Desktop/NBA_Daily/",modelDate,"FanDuel.csv"),stringsAsFactors=FALSE)
+    nba_modelDate <- read.csv(paste0("~/Desktop/NBA_Daily/",modelDate,"FanDuel.csv"))
+    nba_modelDate <- na.zero(nba_modelDate)
+
     #nba_modelDateOwnP <- data.frame(FOO=c(nba_modelDate$Projected_Ownership))
     #nba_modelDateOwnP <- separate(data = nba_modelDateOwnP,col = FOO, into = c("minOwn","maxOwn"),sep = "-")
 

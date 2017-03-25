@@ -18,3 +18,4 @@ NBA Team Total Summary
 \examples{
 nbaTeamSummary(modelDate = "11_30_2016")
 }
+

@@ -18,3 +18,4 @@ NHL Projections Function
 \examples{
 nhlProjections(modelDate)
 }
+

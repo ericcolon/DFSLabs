@@ -19,3 +19,4 @@ NBA Projections
 \examples{
 projectNBA(modelDate,slate,exclude,cookie)
 }
+

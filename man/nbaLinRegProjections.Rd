@@ -4,8 +4,9 @@
 \alias{nbaLinRegProjections}
 \title{NBA Linear Regression Model Projections Function}
 \usage{
-nbaLinRegProjections(modelDate = "11_15_2016", modelSite = "Draftkings",
-  lmFit = lmer10, lmModel = "lmer10")
+nbaLinRegProjections(modelDate = "2_12_2017", modelSite = "Draftkings",
+  lmFit = lmer10, lmModel = "lmer10", errorHandleProp = NULL,
+  errorHandleValue = NULL)
 }
 \arguments{
 \item{modelDate}{"12_27_2016"}
@@ -25,3 +26,4 @@ NBA Linear Regression Model Projections Function
 \examples{
 nbaLinRegProjections(modelDate="11_15_2016",modelSite="Draftkings",lmFit=lmer10,lmModel = "lmer10")
 }
+

@@ -20,3 +20,4 @@ OutlierKD Function
 \examples{
 outlierKD(df,variable)
 }
+

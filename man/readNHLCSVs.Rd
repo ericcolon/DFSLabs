@@ -20,3 +20,4 @@ Read NHL csv saved Models
 \examples{
 nhl12_23_2016 <- readNHLCSVs(modelDate = "12_23_2016",modelPosition="All")
 }
+

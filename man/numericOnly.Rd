@@ -18,3 +18,4 @@ Numeric Only DataFrame
 \examples{
 dfNums <- numericOnly(dF)
 }
+

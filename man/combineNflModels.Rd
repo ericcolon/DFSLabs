@@ -18,3 +18,4 @@ Bind NFL Models
 \examples{
 combineNflModels(allModels)
 }
+

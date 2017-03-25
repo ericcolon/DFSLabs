@@ -30,3 +30,4 @@ NFL FantasyLabs Model Retrieve
 \examples{
 get.NflLabModel_old(modelYear = "2015",modelWeek = NULL,model = NULL,mod = "", PositionID = NULL)
 }
+

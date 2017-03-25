@@ -18,3 +18,4 @@ Simple Swish rating for a loop
 \examples{
 swishHitterLoop(gDate = "2016-08-12")
 }
+

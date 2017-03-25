@@ -1,5 +1,5 @@
 foreach(i=9:17) %dopar% getNflLabModel("2015",i,PositionID="QB")
-readQB16 <- foreach(i=1:17) %dopar% readNFLCSVs("2016",i,PositionID = "QB")
+readQB16 <- foreach(i=1:17) %dopar% DFSLabs::readNFLCSVs("2016",i,PositionID = "QB")
 readQB15 <- foreach(i=1:17) %dopar% readNFLCSVs("2015",i,PositionID = "QB")
 QB <- bind_rows(readQB15,readQB16)
 #QB <- bind_rows(readQB16)

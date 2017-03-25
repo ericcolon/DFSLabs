@@ -18,3 +18,4 @@ CashLine function for multiple iterations
 \examples{
 getCashLineLoop(urlDate = "aug-i-2016")
 }
+

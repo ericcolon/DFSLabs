@@ -20,3 +20,4 @@ Daily FantasyNerd PRojections Format to csv for upload
 \examples{
 dailyFantasyNerdProjForm(modelDate="12_1_2016",projType="Averaged")
 }
+

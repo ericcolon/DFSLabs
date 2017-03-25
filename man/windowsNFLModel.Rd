@@ -28,3 +28,4 @@ NFL model for Windows
 \examples{
 NFLQB2016Wk1 <- windowsNFLModel(userName = "Benjaminryanshopping@icloud.com",passWord = "W3ytjk589682",modelYear = "2016",modelWeek = 1,modelPosition = "QB")
 }
+

@@ -15,3 +15,4 @@ Function to lookup past cash lines(DK)
 \examples{
 getCashLine()
 }
+

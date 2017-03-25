@@ -27,3 +27,4 @@ Read NFl csv saved Models
 \examples{
 QBM <- readNFLCSVs(modelYear = "2015",modelSite="Draftkings",modelWeek = NULL ,mod = "", PositionID = NULL)
 }
+

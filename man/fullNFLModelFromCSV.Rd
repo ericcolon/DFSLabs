@@ -18,3 +18,4 @@ Full NFL models from CSV function
 \examples{
 fullNFLModelFromCSV(week)
 }
+

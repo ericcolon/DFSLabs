@@ -1,8 +1,0 @@
-load(file="~/Desktop/NBA_Daily/glmfit4.rda")
-load(file="~/Desktop/NBA_Daily/lmer10.rda")
-load(file="~/Desktop/NBA_Daily/nbaFit5_5Step.rda")
-load(file="~/Desktop/NBA_Daily/nbaFit5_5.rda")
-load(file="~/Desktop/NBA_Daily/nYearGLM1.rda")
-load(file="~/Desktop/NBA_Daily/nYearLM1AIC.rda")
-load(file="~/Desktop/NBA_Daily/nba16_17AllStep.rda")
-load(file="~/Desktop/NBA_Daily/nYearGLM2.rda")

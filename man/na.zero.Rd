@@ -18,3 +18,4 @@ NA to Zero
 \examples{
 na.zero(x)
 }
+

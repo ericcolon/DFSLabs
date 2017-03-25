@@ -20,3 +20,4 @@ NFL Iterate All Function
 \examples{
 iterateAllNFL(weeksFor =NULL,forPosition = "QB")
 }
+
