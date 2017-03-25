@@ -1,17 +1,20 @@
 #' getLabsCookies
 #'
-#' @return all BBM Cookies
+#' @param dockerName docker container name(can be anything)
+#' @param sport mlb,nba,nfl,nhl,pga
+#'
+#' @return all FantasyLab Cookies
 #' @export
 #'
-#' @examples getLabsCookies()
-getLabsCookies<-function(dockerName=NULL){
+#' @examples getLabsCookies("labCookies","mlb")
+getLabsCookies<-function(dockerName="labCookies",sport="mlb"){
 
   require(RSelenium)
   require(wdman)
   system(command=paste0("docker run -d --name ","'",dockerName,"'"," -p 4445:4444 selenium/standalone-firefox"))
   #rd<-rsDriver(browser="firefox",verbose=FALSE)
   #web <- rd[["client"]]
-  waitFor(4)
+  waitFor(3)
   web<-remoteDriver(port=4445L)
   web$open()
   web$navigate(url="https://fantasylabs.com/account/login")
@@ -20,14 +23,15 @@ getLabsCookies<-function(dockerName=NULL){
   usernameBox$sendKeysToElement(list("Benjaminryanshopping@icloud.com"))
   passwordBox$sendKeysToElement(list("W3ytjk589682"))
   web$findElement("xpath", "/html/body/div[3]/form[1]/div[4]/button")$clickElement()
-  waitFor(10)
-  web$navigate(url="http://www.fantasylabs.com/nba/player-models/")
-  #waitFor(10)
+  waitFor(5)
+  web$navigate(url=paste0("http://www.fantasylabs.com/",sport,"/player-models/"))
+  waitFor(8)
   LabsCookies <- web$getAllCookies()
   LabsCookies <- data.frame(LabsCookies)
   cookie0 <- LabsCookies$value
   cookie1 <- LabsCookies$value.1
   cookie2 <- LabsCookies$value.2
+  cookie3 <- LabsCookies$value.3
   cookie4 <- LabsCookies$value.4
   cookie5 <- LabsCookies$value.5
   cookie6 <- LabsCookies$value.6
@@ -39,6 +43,7 @@ getLabsCookies<-function(dockerName=NULL){
   name0 <- LabsCookies$name
   name1 <- LabsCookies$name.1
   name2 <- LabsCookies$name.2
+  name3 <- LabsCookies$name.3
   name4 <- LabsCookies$name.4
   name5 <- LabsCookies$name.5
   name6 <- LabsCookies$name.6
@@ -47,15 +52,15 @@ getLabsCookies<-function(dockerName=NULL){
   name9 <- LabsCookies$name.9
   name10 <- LabsCookies$name.10
   labsCookie <- paste0("__cfduid","=",cookie1,"; ",
-                      "LD_U=",cookie8,"; ",
+                      "LD_U=",cookie7,"; ",
                       "LD_R=",cookie5,"; ",
                       "_gat=",cookie4,"; ",
-                      ".AspNet.Cookies=",cookie2,"; ",
+                      ".AspNet.Cookies=",cookie3,"; ",
                       "flid=",cookie0,"; ",
-                      "__zlcmid=",cookie6,"; ",
-                      "__distillery=",cookie10,"; ",
-                      "_ga=",cookie7,"; ",
-                      "LD_T=",cookie9,"'")
+                      "__zlcmid=",cookie10,"; ",
+                      "__distillery=",cookie9,"; ",
+                      "_ga=",cookie6,"; ",
+                      "LD_T=",cookie8,"'")
   #labsCookie <- paste0("'",name0,"=",cookie0,"; ",
                        #name1,"=",cookie1,"; ",
                        #name2,"=",cookie2,"; ",

@@ -4,15 +4,20 @@
 \alias{getLabsCookies}
 \title{getLabsCookies}
 \usage{
-getLabsCookies(dockerName = NULL)
+getLabsCookies(dockerName = "labCookies", sport = "mlb")
+}
+\arguments{
+\item{dockerName}{docker container name(can be anything)}
+
+\item{sport}{mlb,nba,nfl,nhl,pga}
 }
 \value{
-all BBM Cookies
+all FantasyLab Cookies
 }
 \description{
 getLabsCookies
 }
 \examples{
-getLabsCookies()
+getLabsCookies("labCookies","mlb")
 }
 
