@@ -23,15 +23,15 @@ getMlbModel <- function(modelDate=NULL, cookie=labCookies, View=NULL){
 
     MLBDKOwn <- data.frame(MLBModelDK$Properties.Player_Name,MLBModelDK$Properties.p_own)
     names(MLBDKOwn)<- c("Name","Projected_Ownership")
-    MLBDKOwn <- na.zero(MLBDKOwn)
-    MLBDKOwn <- MLBDKOwn %>% arrange(desc(Projected_Ownership))
+    MLBDKOwn <- DFSLabs::na.zero(MLBDKOwn)
+    MLBDKOwn <- MLBDKOwn %>% dplyr::arrange(desc(Projected_Ownership))
 
 
 
     LabsFixedNames1 <- sapply(MLBModelH,as.character)
     LabsFixedNames2 <- sapply(MLBModelP,as.character)
     LabsFixedNames3 <- sapply(MLBDKOwn,as.character)
-    LabsFixedNames3 <- na.zero(LabsFixedNames3)
+    LabsFixedNames3 <- DFSLabs::na.zero(LabsFixedNames3)
     write.csv(LabsFixedNames1, file = paste0("~/Desktop/MLB_Daily/","MLB_",modelDate,"_DK_Hitters.csv"))
     write.csv(LabsFixedNames2, file = paste0("~/Desktop/MLB_Daily/","MLB_",modelDate,"_DK_Pitchers.csv"))
     write.csv(LabsFixedNames3, file = paste0("~/Desktop/MLB_Daily/","MLB_",modelDate,"_DKOwn.csv"))

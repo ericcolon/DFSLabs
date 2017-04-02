@@ -9,7 +9,8 @@
 #' @export
 #'
 #' @examples nbaLinRegProjections(modelDate="11_15_2016",modelSite="Draftkings",lmFit=lmer10,lmModel = "lmer10")
-nbaLinRegProjections <- function(modelDate="2_12_2017",modelSite="Draftkings",lmFit=lmer10,lmModel = "lmer10",errorHandleProp=NULL,errorHandleValue=NULL){
+nbaLinRegProjections <- function(modelDate="2_12_2017",modelSite="Draftkings",lmFit=lmer10,lmModel = "lmer10",errorHandleProp=NULL,errorHandleValue=NULL,cookie=labsC){
+suppressWarnings(DFSLabs::getNBAPlayerModel(modelDate=modelDate,cookie=cookie))
 if(modelSite=="Draftkings"){
 #load(file ="~/Desktop/NBA_Daily/nbaFit4.rda")
 #load(file ="~/Desktop/NBA_Daily/nbaFit10noStep.rda")
@@ -20,6 +21,7 @@ if(modelSite=="Draftkings"){
 #nba_modelDateFD <- nba_modelDateFD %>% arrange(Name)
 nba_modelDate <- read.csv(paste0("~/Desktop/NBA_Daily/",modelDate,".csv"))
 nba_modelDate <- na.zero(nba_modelDate)
+nba_modelDate$Properties.MyTrends <- 0
 #nba_modelDateOwnP <- data.frame(FOO=c(nba_modelDate$Projected_Ownership))
 #nba_modelDateOwnP <- separate(data = nba_modelDateOwnP,col = FOO, into = c("minOwn","maxOwn"),sep = "-")
 if(!is.null(errorHandleProp)){

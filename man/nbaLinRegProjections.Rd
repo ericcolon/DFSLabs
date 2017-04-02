@@ -6,7 +6,7 @@
 \usage{
 nbaLinRegProjections(modelDate = "2_12_2017", modelSite = "Draftkings",
   lmFit = lmer10, lmModel = "lmer10", errorHandleProp = NULL,
-  errorHandleValue = NULL)
+  errorHandleValue = NULL, cookie = labsC)
 }
 \arguments{
 \item{modelDate}{"12_27_2016"}

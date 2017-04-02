@@ -24,7 +24,11 @@ load(file="~/Desktop/NBA_Daily/all3000LM3FitStep.rda")
 load(file="~/Desktop/NBA_Daily/bbmAll3000LM.rda")
 load(file="~/Desktop/NBA_Daily/labZero2Step.rda")
 load(file="~/Desktop/NBA_Daily/nbaLM13.rda")
-load(file="~/Desktop/NBA_Daily/allStarLmer.rda")
+load(file="~/Desktop/NBA_Daily/nba16_17AllLm3Step.rda")
+load(file="~/Desktop/NBA_Daily/nba16_17AllLm3.rda")
+load(file="~/Desktop/NBA_Daily/nba16_17AllLm2.rda")
+load(file="~/Desktop/NBA_Daily/nba16_17AllLm1.rda")
+
 
 }
 

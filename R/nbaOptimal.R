@@ -26,15 +26,16 @@ nbaOptimalProj <- function(mMonth="2",mDay="12",mYear="2017",labsCookies=NULL,do
   require(dplyr)
 
   if(is.null(labsCookies)){
-    labsCookies<- getLabsCookies(dockerName=dockerName)
+    labsCookies<- getLabsCookies(dockerName=dockerName,sport="nba")
   }
   modelDate<- paste0(mMonth,"_",mDay,"_",mYear)
   suppressWarnings(nbaFullRun(modelDate=modelDate,step=labsFit,model2name=labsName,cookie=labsCookies))
   nba <- suppressWarnings(nbaMonsterLabProjections(mMonth=mMonth,mDay=mDay,mYear=mYear,labsFit=labsFit,labsName=labsName,bbmFit=bbmFit,combinedName=combinedName,errorHandleProp=errorHandleProp,errorHandleValue=errorHandleValue))
-  nba3k <- suppressWarnings(nbaMonsterLabProjections(mMonth=mMonth,mDay=mDay,mYear=mYear,labsFit=labs3k,labsName=labsName3k,bbmFit=bbm3k,combinedName=combined3k,errorHandleProp=errorHandleProp,errorHandleValue=errorHandleValue))
+  #nba3k <- suppressWarnings(nbaMonsterLabProjections(mMonth=mMonth,mDay=mDay,mYear=mYear,labsFit=labs3k,labsName=labsName3k,bbmFit=bbm3k,combinedName=combined3k,errorHandleProp=errorHandleProp,errorHandleValue=errorHandleValue))
   nba <- nba %>% filter(Salary>4000)
-  nba3k <- nba3k %>% filter(Salary<4100)
-  nbaAll <- suppressWarnings(bind_rows(nba,nba3k))
+  #nba3k <- nba3k %>% filter(Salary<4100)
+  #nbaAll <- suppressWarnings(bind_rows(nba,nba3k))
+  nbaAll <- suppressWarnings(bind_rows(nba))
   nbaAll <- na.zero(nbaAll)
   write.csv(nbaAll,file=paste0("~/Desktop/NBA_Daily/",mMonth,"_",mDay,"_",mYear,finalName,".csv"))
   zeroLabs <- suppressWarnings(labZeroProjections(modelDate=paste0(mMonth,"_",mDay,"_",mYear),zeroFit=labZero2Step,labsCookies=labsCookies))
